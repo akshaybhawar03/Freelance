@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ember & Olive | Fine Dining Experience</title>
+    <meta
+      name="description"
+      content="Ember & Olive offers an elevated dining experience with wood-fired cuisine, curated wines, and unforgettable atmosphere."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav container">
+        <a class="logo" href="#top">Ember <span>&</span> Olive</a>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#reserve" class="btn-link">Reserve</a></li>
+        </ul>
+      </nav>
+      <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+          <p class="eyebrow">Michelin-Inspired Dining</p>
+          <h1>Where Fire, Flavor, and Elegance Meet</h1>
+          <p>
+            Discover seasonal tasting menus crafted with local ingredients,
+            artisanal techniques, and a touch of theatre.
+          </p>
+          <div class="hero-actions">
+            <a href="#reserve" class="btn primary">Reserve a Table</a>
+            <a href="#menu" class="btn secondary">Explore Menu</a>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="stats container">
+        <article>
+          <h2>12+</h2>
+          <p>Years of Culinary Excellence</p>
+        </article>
+        <article>
+          <h2>45k</h2>
+          <p>Guests Served Annually</p>
+        </article>
+        <article>
+          <h2>4.9★</h2>
+          <p>Average Guest Rating</p>
+        </article>
+      </section>
+
+      <section class="about container" id="about">
+        <div>
+          <p class="eyebrow">Our Story</p>
+          <h2>A destination for unforgettable evenings.</h2>
+          <p>
+            At Ember & Olive, each dish tells a story of provenance and passion.
+            From hand-selected produce to sustainably sourced seafood, our kitchen
+            celebrates authenticity with modern finesse.
+          </p>
+          <p>
+            Set in a warm, contemporary space with live jazz evenings and curated
+            pairings, we bring people together over cuisine that lingers in memory.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>Tonight's Highlight</h3>
+          <p>
+            Charcoal-seared sea bass with saffron fennel velouté, citrus beurre
+            blanc, and smoked herb oil.
+          </p>
+          <a href="#reserve" class="btn primary">Book Tonight</a>
+        </div>
+      </section>
+
+      <section class="menu" id="menu">
+        <div class="container">
+          <p class="eyebrow">Signature Menu</p>
+          <h2>Curated plates, crafted to impress.</h2>
+          <div class="menu-grid">
+            <article>
+              <h3>Wood-Fired Octopus</h3>
+              <p>Smoked paprika glaze, charred lemon, olive tapenade.</p>
+              <span>$24</span>
+            </article>
+            <article>
+              <h3>Truffle Ricotta Gnocchi</h3>
+              <p>Wild mushrooms, black truffle cream, parmesan crisp.</p>
+              <span>$31</span>
+            </article>
+            <article>
+              <h3>48-Hour Braised Short Rib</h3>
+              <p>Silky potato purée, glazed carrots, red wine jus.</p>
+              <span>$38</span>
+            </article>
+            <article>
+              <h3>Citrus Garden Tart</h3>
+              <p>Yuzu curd, candied zest, almond sable, vanilla bean.</p>
+              <span>$14</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery container" id="gallery">
+        <p class="eyebrow">Atmosphere</p>
+        <h2>An immersive dining experience.</h2>
+        <div class="gallery-grid">
+          <div class="tile tall"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile wide"></div>
+        </div>
+      </section>
+
+      <section class="testimonials" id="testimonials">
+        <div class="container">
+          <p class="eyebrow">Guest Reviews</p>
+          <h2>What diners are saying.</h2>
+          <div class="review-grid">
+            <blockquote>
+              “Absolutely spectacular from first course to dessert. Service was
+              flawless and every bite felt intentional.”
+              <cite>— Amelia R.</cite>
+            </blockquote>
+            <blockquote>
+              “The ambiance is incredible and the tasting menu was beyond
+              expectations. Our new celebration spot.”
+              <cite>— Jordan T.</cite>
+            </blockquote>
+            <blockquote>
+              “A true fine-dining gem. The wine pairings elevated the entire
+              evening.”
+              <cite>— Marcus L.</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="reserve container" id="reserve">
+        <div>
+          <p class="eyebrow">Reservations</p>
+          <h2>Reserve your table in seconds.</h2>
+          <p>
+            We welcome you for intimate dinners, special celebrations, and curated
+            chef experiences.
+          </p>
+        </div>
+        <form class="reservation-form" id="reservationForm">
+          <label>
+            Full Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Date
+            <input type="date" name="date" required />
+          </label>
+          <label>
+            Guests
+            <select name="guests" required>
+              <option value="">Select</option>
+              <option>2 Guests</option>
+              <option>4 Guests</option>
+              <option>6 Guests</option>
+              <option>8+ Guests</option>
+            </select>
+          </label>
+          <button type="submit" class="btn primary">Confirm Reservation</button>
+          <p class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Ember & Olive. Crafted for remarkable nights.</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
