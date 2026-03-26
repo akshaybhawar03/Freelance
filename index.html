@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{SALON_NAME}} - Premium Hair & Beauty Services. Book your appointment on WhatsApp for expert salon services." />
+  <title>{{SALON_NAME}} | Premium Hair & Beauty Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --bg-soft: #121212;
+      --surface: #171717;
+      --surface-2: #1d1d1d;
+      --text: #f5f5f5;
+      --muted: #c9c9c9;
+      --gold: #d7b56d;
+      --gold-soft: #f0ddae;
+      --border: rgba(215, 181, 109, 0.25);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --max-width: 1120px;
+      --transition: 280ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top right, #222 0%, var(--bg) 40%, #080808 100%);
+      line-height: 1.6;
+      min-height: 100vh;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 84px 20px;
+    }
+
+    .container {
+      width: min(var(--max-width), 100%);
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      color: var(--gold-soft);
+    }
+
+    .section-subtext {
+      max-width: 700px;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 120;
+      backdrop-filter: blur(10px);
+      background: rgba(10, 10, 10, 0.88);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-wrap {
+      width: min(var(--max-width), 100%);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+      font-weight: 700;
+      color: var(--gold-soft);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.94rem;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--gold-soft);
+      outline: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 22px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+      will-change: transform;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold) 0%, #b88b3f 100%);
+      color: #101010;
+      box-shadow: 0 8px 20px rgba(215, 181, 109, 0.28);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(215, 181, 109, 0.35);
+      outline: none;
+    }
+
+    .hero {
+      padding-top: 90px;
+      padding-bottom: 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      line-height: 1.08;
+      margin-bottom: 16px;
+      letter-spacing: 0.6px;
+    }
+
+    .hero .tagline {
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      color: var(--gold-soft);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 560px;
+    }
+
+    .hero-media {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
+      min-height: 340px;
+      border: 1px solid var(--border);
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 45%);
+    }
+
+    .hero-media img {
+      height: 100%;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      background: linear-gradient(160deg, var(--surface) 0%, var(--surface-2) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px 18px;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(215, 181, 109, 0.6);
+    }
+
+    .service-icon {
+      font-size: 1.5rem;
+      margin-bottom: 14px;
+    }
+
+    .service-card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      color: var(--gold-soft);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item img {
+      aspect-ratio: 4/5;
+      transition: transform 450ms ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .about-box,
+    .contact-box {
+      background: linear-gradient(170deg, var(--surface) 0%, #131313 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 34px);
+      box-shadow: var(--shadow);
+    }
+
+    .about-highlights {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .about-highlights li {
+      list-style: none;
+      color: var(--muted);
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .about-highlights li::before {
+      content: "✦";
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .contact-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .contact-label {
+      font-size: 0.82rem;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      color: #a3a3a3;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      padding: 26px 20px 34px;
+      color: #9d9d9d;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.92rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-media {
+        min-height: 300px;
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      section {
+        padding: 68px 16px;
+      }
+
+      .nav-wrap {
+        padding: 12px 16px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 0.88rem;
+      }
+
+      .card-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-wrap">
+      <a class="brand" href="#home">{{SALON_NAME}}</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="fade-in">
+          <h1>{{SALON_NAME}}</h1>
+          <p class="tagline">Premium Hair &amp; Beauty Services</p>
+          <p>Elevate your beauty routine with personalized salon experiences crafted for modern lifestyles. Expert stylists, premium products, and warm hospitality—right in your neighborhood.</p>
+          <a class="btn btn-primary" href="https://wa.me/{{PHONE_NUMBER}}" target="_blank" rel="noopener noreferrer">Book on WhatsApp</a>
+        </div>
+        <div class="hero-media fade-in" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" alt="Salon interior with premium setup" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-heading fade-in">Signature Services</h2>
+        <p class="section-subtext fade-in">Luxury salon treatments delivered with skill and care. Customize these placeholders with your final service rates.</p>
+
+        <div class="card-grid">
+          <article class="service-card fade-in">
+            <div class="service-icon" aria-hidden="true">✂️</div>
+            <h3>Haircut</h3>
+            <p class="price">Starting at ₹{{PRICE_HAIRCUT}}</p>
+          </article>
+
+          <article class="service-card fade-in">
+            <div class="service-icon" aria-hidden="true">💇‍♀️</div>
+            <h3>Hair Styling</h3>
+            <p class="price">Starting at ₹{{PRICE_STYLING}}</p>
+          </article>
+
+          <article class="service-card fade-in">
+            <div class="service-icon" aria-hidden="true">✨</div>
+            <h3>Facial &amp; Skincare</h3>
+            <p class="price">Starting at ₹{{PRICE_FACIAL}}</p>
+          </article>
+
+          <article class="service-card fade-in">
+            <div class="service-icon" aria-hidden="true">👰</div>
+            <h3>Bridal Makeup</h3>
+            <p class="price">Starting at ₹{{PRICE_BRIDAL}}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <h2 class="section-heading fade-in">Gallery</h2>
+        <p class="section-subtext fade-in">A glimpse into our transformations, ambience, and premium finish.</p>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=80" alt="Salon hairstyle look 1" loading="lazy" /></figure>
+          <figure class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1500840216050-6ffa99d75160?auto=format&fit=crop&w=700&q=80" alt="Salon hairstyle look 2" loading="lazy" /></figure>
+          <figure class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" alt="Skincare and facial setup" loading="lazy" /></figure>
+          <figure class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=80" alt="Makeup artistry closeup" loading="lazy" /></figure>
+          <figure class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1596704017254-9f17c22e71f8?auto=format&fit=crop&w=700&q=80" alt="Hair styling in progress" loading="lazy" /></figure>
+          <figure class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=700&q=80" alt="Bridal makeup look" loading="lazy" /></figure>
+          <figure class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80" alt="Salon beauty portrait" loading="lazy" /></figure>
+          <figure class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1522336284037-91f7da073525?auto=format&fit=crop&w=700&q=80" alt="Hair care products shelf" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="about-box fade-in">
+          <h2 class="section-heading">About {{SALON_NAME}}</h2>
+          <p>At {{SALON_NAME}}, we combine international styling trends with personalized care to deliver a refined beauty experience for every client. From quick grooming sessions to complete bridal transformations, our team is dedicated to quality, hygiene, and exceptional results.</p>
+          <ul class="about-highlights">
+            <li>{{YEARS_EXPERIENCE}}+ years of professional salon expertise.</li>
+            <li>Trained stylists using trusted, premium-grade products.</li>
+            <li>Comfort-first ambience designed for modern clientele.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box fade-in">
+          <h2 class="section-heading">Contact &amp; Bookings</h2>
+          <p class="section-subtext">Reach out for appointments, bridal packages, and personalized consultations.</p>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <p class="contact-label">Address</p>
+              <p>{{SALON_ADDRESS}}</p>
+            </div>
+            <div class="contact-item">
+              <p class="contact-label">Phone</p>
+              <p>{{PHONE_NUMBER}}</p>
+            </div>
+          </div>
+          <br />
+          <a class="btn btn-primary" href="https://wa.me/{{PHONE_NUMBER}}" target="_blank" rel="noopener noreferrer">Book on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> {{SALON_NAME}}. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
